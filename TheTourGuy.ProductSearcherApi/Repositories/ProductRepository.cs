@@ -17,12 +17,12 @@ public class ProductRepository
     private void LoadProducts()
     {
         // Load products from the three JSON files.
-        LoadProductsFromFile("TheTourGuyData.json", "TheTourGuy");
+        LoadProductsFromFile("TheTourGuyData.json", "TheTourGuy","Mexico");
         //LoadProductsFromFile("SomeOtherGuy.json", "SomeOtherGuy");
         //LoadProductsFromFile("TheBigGuy.json", "TheBigGuy");
     }
 
-    private void LoadProductsFromFile(string filePath, string supplierName)
+    private void LoadProductsFromFile(string filePath, string supplierName,string destination)
     {
         var json = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "JsonSources", filePath));
         JObject jsonObject = JObject.Parse(json);
@@ -32,6 +32,7 @@ public class ProductRepository
         foreach (var product in products)
         {
             product.SupplierName = supplierName;
+            product.Destination = destination;
             _products.Add(product);
         }
     }

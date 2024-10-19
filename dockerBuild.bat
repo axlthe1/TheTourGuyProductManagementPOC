@@ -1,0 +1,1 @@
+podman build -t product-search-api .

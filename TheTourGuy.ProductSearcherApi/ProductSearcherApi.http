@@ -1,6 +1,6 @@
-@ProductSearcherApi_HostAddress = http://localhost:5026
+@ProductSearcherApi_HostAddress = http://localhost:8080
 
-GET {{ProductSearcherApi_HostAddress}}/weatherforecast/
+GET {{ProductSearcherApi_HostAddress}}/api/products?guests=5
 Accept: application/json
 
 ###
