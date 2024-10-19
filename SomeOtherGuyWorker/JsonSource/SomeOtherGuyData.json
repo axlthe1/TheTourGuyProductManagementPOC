@@ -1,0 +1,862 @@
+{
+    "Products": [
+      {
+        "id": 1,
+        "name": "Bangkok Grand Palace and Wat Arun Tour",
+        "productDescription": "Discover the iconic Grand Palace and Wat Arun in Bangkok.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 200,
+          "totalRating": 900
+        },
+        "price": 50.00,
+        "discountPercentage": 10,
+        "capacity": 20,
+        "imageUrls": [
+          "tour1_1.jpg",
+          "tour1_2.jpg",
+          "tour1_3.jpg"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Chiang Mai Doi Suthep and Hill Tribe Tour",
+        "productDescription": "Visit Doi Suthep and explore the culture of local hill tribes.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 150,
+          "totalRating": 750
+        },
+        "price": 60.00,        
+        "discountPercentage": 12,
+        "capacity": 25,
+        "imageUrls": [
+          "tour2_1.jpg",
+          "tour2_2.jpg",
+          "tour2_3.jpg",
+          "tour2_4.jpg"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Phuket Sunset Cruise",
+        "productDescription": "Enjoy a romantic sunset cruise along the coast of Phuket.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 180,
+          "totalRating": 820
+        },
+        "price": 85.00,
+        "discountPercentage": 15,
+        "capacity": 15,
+        "imageUrls": [
+          "tour3_1.jpg",
+          "tour3_2.jpg",
+          "tour3_3.jpg"
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Ayutthaya River Cruise and Historical Tour",
+        "productDescription": "Cruise the Chao Phraya River and explore Ayutthaya’s historical sites.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 250,
+          "totalRating": 1200
+        },
+        "price": 75.00,        
+        "discountPercentage": 8,
+        "capacity": 30,
+        "imageUrls": [
+          "tour4_1.jpg",
+          "tour4_2.jpg",
+          "tour4_3.jpg",
+          "tour4_4.jpg"
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Pattaya Coral Island Adventure",
+        "productDescription": "Snorkel and relax on the beautiful Coral Island near Pattaya.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 220,
+          "totalRating": 1050
+        },
+        "price": 65.00,    
+        "discountPercentage": 10,
+        "capacity": 35,
+        "imageUrls": [
+          "tour5_1.jpg",
+          "tour5_2.jpg",
+          "tour5_3.jpg",
+          "tour5_4.jpg",
+          "tour5_5.jpg"
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Chiang Rai Golden Triangle and Mekong River Tour",
+        "productDescription": "Visit the Golden Triangle and cruise the Mekong River.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 175,
+          "totalRating": 900
+        },
+        "price": 80.00,
+        "discountPercentage": 7,
+        "capacity": 20,
+        "imageUrls": [
+          "tour6_1.jpg",
+          "tour6_2.jpg",
+          "tour6_3.jpg"
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Kanchanaburi Erawan Waterfall and Bridge on the River Kwai Tour",
+        "productDescription": "Explore Erawan Waterfall and the historic Bridge on the River Kwai.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 200,
+          "totalRating": 950
+        },
+        "price": 70.00,
+        "discountPercentage": 9,
+        "capacity": 25,
+        "imageUrls": [
+          "tour7_1.jpg",
+          "tour7_2.jpg",
+          "tour7_3.jpg"
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Krabi Island Hopping and Snorkeling Tour",
+        "productDescription": "Hop between Krabi’s stunning islands and enjoy snorkeling.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 180,
+          "totalRating": 850
+        },
+        "price": 90.00,
+        "discountPercentage": 13,
+        "capacity": 30,
+        "imageUrls": [
+          "tour8_1.jpg",
+          "tour8_2.jpg",
+          "tour8_3.jpg",
+          "tour8_4.jpg"
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Samui Full Moon Party and Island Tour",
+        "productDescription": "Experience the famous Full Moon Party and explore Koh Samui.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 300,
+          "totalRating": 1400
+        },
+        "price": 95.00,
+        "discountPercentage": 14,
+        "capacity": 50,
+        "imageUrls": [
+          "tour9_1.jpg",
+          "tour9_2.jpg",
+          "tour9_3.jpg",
+          "tour9_4.jpg",
+          "tour9_5.jpg"
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Bangkok Chinatown Street Food and Night Market Tour",
+        "productDescription": "Taste Bangkok’s street food and explore the vibrant Chinatown night market.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 150,
+          "totalRating": 750
+        },
+        "price": 40.00,
+        "discountPercentage": 5,
+        "capacity": 20,
+        "imageUrls": [
+          "tour10_1.jpg",
+          "tour10_2.jpg",
+          "tour10_3.jpg"
+        ]
+      },
+      {
+        "id": 11,
+        "name": "Koh Phi Phi Diving and Snorkeling Adventure",
+        "productDescription": "Dive and snorkel in the crystal-clear waters around Koh Phi Phi.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 250,
+          "totalRating": 1200
+        },
+        "price": 85.00,
+        "discountPercentage": 12,
+        "capacity": 30,
+        "imageUrls": [
+          "tour11_1.jpg",
+          "tour11_2.jpg",
+          "tour11_3.jpg"
+        ]
+      },
+      {
+        "id": 12,
+        "name": "Chiang Mai Elephant Sanctuary and Trekking Tour",
+        "productDescription": "Spend a day with rescued elephants and trek through the jungle near Chiang Mai.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 200,
+          "totalRating": 950
+        },
+        "price": 75.00,
+        "discountPercentage": 11,
+        "capacity": 15,
+        "imageUrls": [
+          "tour12_1.jpg",
+          "tour12_2.jpg",
+          "tour12_3.jpg"
+        ]
+      },
+      {
+        "id": 13,
+        "name": "Bangkok Temples and Canals Tour",
+        "productDescription": "Explore Bangkok’s famous temples and cruise through its historic canals.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 220,
+          "totalRating": 1050
+        },
+        "price": 50.00,
+        "discountPercentage": 6,
+        "capacity": 25,
+        "imageUrls": [
+          "tour13_1.jpg",
+          "tour13_2.jpg",
+          "tour13_3.jpg"
+        ]
+      },
+      {
+        "id": 14,
+        "name": "Pattaya Underwater World and Nong Nooch Garden Tour",
+        "productDescription": "Visit Pattaya’s Underwater World and explore the beautiful Nong Nooch Garden.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 180,
+          "totalRating": 900
+        },
+        "price": 60.00,
+        "discountPercentage": 9,
+        "capacity": 35,
+        "imageUrls": [
+          "tour14_1.jpg",
+          "tour14_2.jpg",
+          "tour14_3.jpg"
+        ]
+      },
+      {
+        "id": 15,
+        "name": "Phuket Phi Phi Islands Day Tour",
+        "productDescription": "Explore the famous Phi Phi Islands on a day trip from Phuket.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 200,
+          "totalRating": 950
+        },
+        "price": 95.00,
+        "discountPercentage": 14,
+        "capacity": 20,
+        "imageUrls": [
+          "tour15_1.jpg",
+          "tour15_2.jpg",
+          "tour15_3.jpg"
+        ]
+      },
+      {
+        "id": 16,
+        "name": "Chiang Rai White Temple and Blue Temple Tour",
+        "productDescription": "Visit the stunning White Temple and Blue Temple in Chiang Rai.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 250,
+          "totalRating": 1250
+        },
+        "price": 80.00,
+        "discountPercentage": 10,
+        "capacity": 30,
+        "imageUrls": [
+          "tour16_1.jpg",
+          "tour16_2.jpg",
+          "tour16_3.jpg"
+        ]
+      },
+      {
+        "id": 17,
+        "name": "Krabi Rock Climbing and Beach Tour",
+        "productDescription": "Climb the limestone cliffs of Krabi and relax on its pristine beaches.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 220,
+          "totalRating": 1100
+        },
+        "price": 70.00,
+        "discountPercentage": 7,
+        "capacity": 15,
+        "imageUrls": [
+          "tour17_1.jpg",
+          "tour17_2.jpg",
+          "tour17_3.jpg"
+        ]
+      },
+      {
+        "id": 18,
+        "name": "Bangkok Floating Markets and Rose Garden Tour",
+        "productDescription": "Visit Bangkok’s floating markets and the beautiful Rose Garden.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 200,
+          "totalRating": 1000
+        },
+        "price": 55.00,
+        "discountPercentage": 8,
+        "capacity": 20,
+        "imageUrls": [
+          "tour18_1.jpg",
+          "tour18_2.jpg",
+          "tour18_3.jpg"
+        ]
+      },
+      {
+        "id": 19,
+        "name": "Chiang Mai Zipline Adventure and Waterfall Tour",
+        "productDescription": "Experience the thrill of ziplining and explore a waterfall in Chiang Mai.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 180,
+          "totalRating": 900
+        },
+        "price": 65.00,
+        "discountPercentage": 11,
+        "capacity": 20,
+        "imageUrls": [
+          "tour19_1.jpg",
+          "tour19_2.jpg",
+          "tour19_3.jpg"
+        ]
+      },
+      {
+        "id": 20,
+        "name": "Phuket Elephant Sanctuary and Jungle Trek",
+        "productDescription": "Spend time with rescued elephants and trek through the jungle near Phuket.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 200,
+          "totalRating": 950
+        },
+        "price": 75.00,
+        "discountPercentage": 9,
+        "capacity": 15,
+        "imageUrls": [
+          "tour20_1.jpg",
+          "tour20_2.jpg",
+          "tour20_3.jpg"
+        ]
+      },
+      {
+        "id": 21,
+        "name": "Bangkok Art and Culture Tour",
+        "productDescription": "Explore Bangkok’s art galleries, street art, and cultural sites.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 150,
+          "totalRating": 750
+        },
+        "price": 45.00,
+        "discountPercentage": 6,
+        "capacity": 20,
+        "imageUrls": [
+          "tour21_1.jpg",
+          "tour21_2.jpg",
+          "tour21_3.jpg"
+        ]
+      },
+      {
+        "id": 22,
+        "name": "Pattaya Tiger Zoo and Nong Nooch Garden Tour",
+        "productDescription": "Visit the Tiger Zoo and explore the beautiful Nong Nooch Garden in Pattaya.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 180,
+          "totalRating": 900
+        },
+        "price": 60.00,
+        "discountPercentage": 10,
+        "capacity": 25,
+        "imageUrls": [
+          "tour22_1.jpg",
+          "tour22_2.jpg",
+          "tour22_3.jpg"
+        ]
+      },
+      {
+        "id": 23,
+        "name": "Koh Samui Jungle Safari and Beach Tour",
+        "productDescription": "Go on a jungle safari and relax on the beaches of Koh Samui.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 220,
+          "totalRating": 1100
+        },
+        "price": 70.00,
+        "discountPercentage": 12,
+        "capacity": 20,
+        "imageUrls": [
+          "tour23_1.jpg",
+          "tour23_2.jpg",
+          "tour23_3.jpg"
+        ]
+      },
+      {
+        "id": 24,
+        "name": "Krabi Kayaking and Island Exploration Tour",
+        "productDescription": "Kayak through Krabi’s stunning landscapes and explore its islands.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 200,
+          "totalRating": 1000
+        },
+        "price": 80.00,
+        "discountPercentage": 13,
+        "capacity": 15,
+        "imageUrls": [
+          "tour24_1.jpg",
+          "tour24_2.jpg",
+          "tour24_3.jpg"
+        ]
+      },
+      {
+        "id": 25,
+        "name": "Chiang Rai Golden Triangle and Tea Plantation Tour",
+        "productDescription": "Explore the Golden Triangle and visit a tea plantation in Chiang Rai.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 200,
+          "totalRating": 950
+        },
+        "price": 75.00,
+        "discountPercentage": 10,
+        "capacity": 20,
+        "imageUrls": [
+          "tour25_1.jpg",
+          "tour25_2.jpg",
+          "tour25_3.jpg"
+        ]
+      },
+      {
+        "id": 26,
+        "name": "Bangkok Bicycle and Canal Tour",
+        "productDescription": "Cycle through Bangkok’s neighborhoods and cruise along its canals.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 150,
+          "totalRating": 750
+        },
+        "price": 45.00,
+        "discountPercentage": 8,
+        "capacity": 15,
+        "imageUrls": [
+          "tour26_1.jpg",
+          "tour26_2.jpg",
+          "tour26_3.jpg"
+        ]
+      },
+      {
+        "id": 27,
+        "name": "Phuket Phi Phi Island Snorkeling Tour",
+        "productDescription": "Snorkel in the crystal-clear waters of the Phi Phi Islands near Phuket.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 220,
+          "totalRating": 1100
+        },
+        "price": 85.00,
+        "discountPercentage": 11,
+        "capacity": 25,
+        "imageUrls": [
+          "tour27_1.jpg",
+          "tour27_2.jpg",
+          "tour27_3.jpg"
+        ]
+      },
+      {
+        "id": 28,
+        "name": "Chiang Mai Cooking Class and Market Tour",
+        "productDescription": "Learn to cook authentic Thai dishes and visit a local market in Chiang Mai.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 180,
+          "totalRating": 900
+        },
+        "price": 50.00,
+        "discountPercentage": 9,
+        "capacity": 20,
+        "imageUrls": [
+          "tour28_1.jpg",
+          "tour28_2.jpg",
+          "tour28_3.jpg"
+        ]
+      },
+      {
+        "id": 29,
+        "name": "Pattaya Coral Island Speedboat Tour",
+        "productDescription": "Take a speedboat tour to the vibrant Coral Island near Pattaya.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 220,
+          "totalRating": 1100
+        },
+        "price": 70.00,
+        "discountPercentage": 12,
+        "capacity": 25,
+        "imageUrls": [
+          "tour29_1.jpg",
+          "tour29_2.jpg",
+          "tour29_3.jpg"
+        ]
+      },
+      {
+        "id": 30,
+        "name": "Bangkok Temples and Grand Palace Tour",
+        "productDescription": "Discover the iconic temples and Grand Palace in Bangkok.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 200,
+          "totalRating": 1000
+        },
+        "price": 55.00,
+        "discountPercentage": 7,
+        "capacity": 30,
+        "imageUrls": [
+          "tour30_1.jpg",
+          "tour30_2.jpg",
+          "tour30_3.jpg"
+        ]
+      },
+      {
+        "id": 31,
+        "name": "Chiang Mai Elephant Care and Hill Tribe Village Tour",
+        "productDescription": "Spend time with elephants and visit a hill tribe village in Chiang Mai.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 180,
+          "totalRating": 900
+        },
+        "price": 65.00,
+        "discountPercentage": 6,
+        "capacity": 15,
+        "imageUrls": [
+          "tour31_1.jpg",
+          "tour31_2.jpg",
+          "tour31_3.jpg"
+        ]
+      },
+      {
+        "id": 32,
+        "name": "Krabi 4 Islands Tour by Longtail Boat",
+        "productDescription": "Explore the famous 4 islands of Krabi by traditional longtail boat.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 220,
+          "totalRating": 1100
+        },
+        "price": 80.00,
+        "discountPercentage": 8,
+        "capacity": 25,
+        "imageUrls": [
+          "tour32_1.jpg",
+          "tour32_2.jpg",
+          "tour32_3.jpg"
+        ]
+      },
+      {
+        "id": 33,
+        "name": "Phuket Sunset Dinner Cruise",
+        "productDescription": "Enjoy a romantic dinner cruise while watching the sunset in Phuket.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 150,
+          "totalRating": 750
+        },
+        "price": 75.00,
+        "discountPercentage": 9,
+        "capacity": 20,
+        "imageUrls": [
+          "tour33_1.jpg",
+          "tour33_2.jpg",
+          "tour33_3.jpg"
+        ]
+      },
+      {
+        "id": 34,
+        "name": "Bangkok Night Market and Street Food Tour",
+        "productDescription": "Explore Bangkok’s vibrant night markets and taste delicious street food.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 180,
+          "totalRating": 900
+        },
+        "price": 50.00,
+        "discountPercentage": 10,
+        "capacity": 30,
+        "imageUrls": [
+          "tour34_1.jpg",
+          "tour34_2.jpg",
+          "tour34_3.jpg"
+        ]
+      },
+      {
+        "id": 35,
+        "name": "Pattaya Underwater World and Beach Tour",
+        "productDescription": "Discover the underwater world and relax on Pattaya’s beaches.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 200,
+          "totalRating": 1000
+        },
+        "price": 60.00,
+        "discountPercentage": 8,
+        "capacity": 25,
+        "imageUrls": [
+          "tour35_1.jpg",
+          "tour35_2.jpg",
+          "tour35_3.jpg"
+        ]
+      },
+      {
+        "id": 36,
+        "name": "Chiang Rai Mae Fah Luang Garden and Doi Tung Tour",
+        "productDescription": "Visit the beautiful Mae Fah Luang Garden and explore Doi Tung in Chiang Rai.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 180,
+          "totalRating": 900
+        },
+        "price": 65.00,
+        "discountPercentage": 6,
+        "capacity": 20,
+        "imageUrls": [
+          "tour36_1.jpg",
+          "tour36_2.jpg",
+          "tour36_3.jpg"
+        ]
+      },
+      {
+        "id": 37,
+        "name": "Phuket Coral Island Catamaran Tour",
+        "productDescription": "Sail to Coral Island on a catamaran and enjoy a day of relaxation.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 200,
+          "totalRating": 1000
+        },
+        "price": 85.00,
+        "discountPercentage": 12,
+        "capacity": 20,
+        "imageUrls": [
+          "tour37_1.jpg",
+          "tour37_2.jpg",
+          "tour37_3.jpg"
+        ]
+      },
+      {
+        "id": 38,
+        "name": "Bangkok Historic Chinatown Walking Tour",
+        "productDescription": "Explore the rich history and vibrant culture of Bangkok’s Chinatown.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 150,
+          "totalRating": 750
+        },
+        "price": 45.00,
+        "discountPercentage": 7,
+        "capacity": 15,
+        "imageUrls": [
+          "tour38_1.jpg",
+          "tour38_2.jpg",
+          "tour38_3.jpg"
+        ]
+      },
+      {
+        "id": 39,
+        "name": "Chiang Mai Ethical Elephant Experience",
+        "productDescription": "Interact with elephants ethically in a responsible sanctuary in Chiang Mai.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 220,
+          "totalRating": 1100
+        },
+        "price": 80.00,
+        "discountPercentage": 10,
+        "capacity": 20,
+        "imageUrls": [
+          "tour39_1.jpg",
+          "tour39_2.jpg",
+          "tour39_3.jpg"
+        ]
+      },
+      {
+        "id": 40,
+        "name": "Krabi Hot Springs and Emerald Pool Tour",
+        "productDescription": "Relax in Krabi’s natural hot springs and swim in the Emerald Pool.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 200,
+          "totalRating": 1000
+        },
+        "price": 70.00,
+        "discountPercentage": 11,
+        "capacity": 25,
+        "imageUrls": [
+          "tour40_1.jpg",
+          "tour40_2.jpg",
+          "tour40_3.jpg"
+        ]
+      },
+      {
+        "id": 41,
+        "name": "Bangkok Street Art and Graffiti Tour",
+        "productDescription": "Discover Bangkok’s vibrant street art and graffiti scene.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 180,
+          "totalRating": 900
+        },
+        "price": 50.00,
+        "discountPercentage": 7,
+        "capacity": 20,
+        "imageUrls": [
+          "tour41_1.jpg",
+          "tour41_2.jpg",
+          "tour41_3.jpg"
+        ]
+      },
+      {
+        "id": 42,
+        "name": "Phuket ATV Adventure and Beach Tour",
+        "productDescription": "Ride an ATV through Phuket’s jungles and relax on the beach afterward.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 200,
+          "totalRating": 1000
+        },
+        "price": 75.00,
+        "discountPercentage": 8,
+        "capacity": 15,
+        "imageUrls": [
+          "tour42_1.jpg",
+          "tour42_2.jpg",
+          "tour42_3.jpg"
+        ]
+      },
+      {
+        "id": 43,
+        "name": "Chiang Rai Blue Temple and Black House Tour",
+        "productDescription": "Visit the unique Blue Temple and the Black House in Chiang Rai.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 180,
+          "totalRating": 900
+        },
+        "price": 65.00,
+        "discountPercentage": 7,
+        "capacity": 15,
+        "imageUrls": [
+          "tour43_1.jpg",
+          "tour43_2.jpg",
+          "tour43_3.jpg"
+        ]
+      },
+      {
+        "id": 44,
+        "name": "Pattaya Floating Market and Sanctuary of Truth Tour",
+        "productDescription": "Explore Pattaya’s floating market and visit the Sanctuary of Truth.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 150,
+          "totalRating": 750
+        },
+        "price": 70.00,
+        "discountPercentage": 6,
+        "capacity": 25,
+        "imageUrls": [
+          "tour44_1.jpg",
+          "tour44_2.jpg",
+          "tour44_3.jpg"
+        ]
+      },
+      {
+        "id": 45,
+        "name": "Bangkok Muay Thai Live Show and Dinner",
+        "productDescription": "Watch an exciting Muay Thai live show while enjoying a delicious dinner.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 200,
+          "totalRating": 1000
+        },
+        "price": 75.00,
+        "discountPercentage": 9,
+        "capacity": 30,
+        "imageUrls": [
+          "tour45_1.jpg",
+          "tour45_2.jpg",
+          "tour45_3.jpg"
+        ]
+      },
+      {
+        "id": 46,
+        "name": "Phuket Snorkeling and Phi Phi Islands Tour",
+        "productDescription": "Snorkel in the crystal-clear waters of Phuket and explore the Phi Phi Islands.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 220,
+          "totalRating": 1100
+        },
+        "price": 85.00,
+        "discountPercentage": 10,
+        "capacity": 20,
+        "imageUrls": [
+          "tour46_1.jpg",
+          "tour46_2.jpg",
+          "tour46_3.jpg"
+        ]
+      },
+      {
+        "id": 47,
+        "name": "Chiang Mai Night Safari and Dinner",
+        "productDescription": "Experience the thrill of a night safari and enjoy dinner in Chiang Mai.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 180,
+          "totalRating": 900
+        },
+        "price": 60.00,
+        "discountPercentage": 9,
+        "capacity": 20,
+        "imageUrls": [
+          "tour47_1.jpg",
+          "tour47_2.jpg",
+          "tour47_3.jpg"
+        ]
+      },
+      {
+        "id": 48,
+        "name": "Bangkok Tuk-Tuk Adventure and Temples Tour",
+        "productDescription": "Explore Bangkok’s temples and streets in a tuk-tuk for an authentic experience.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 200,
+          "totalRating": 1000
+        },
+        "price": 55.00,
+        "discountPercentage": 8,
+        "capacity": 25,
+        "imageUrls": [
+          "tour48_1.jpg",
+          "tour48_2.jpg",
+          "tour48_3.jpg"
+        ]
+      },
+      {
+        "id": 49,
+        "name": "Krabi Kayaking and Mangrove Forest Tour",
+        "productDescription": "Kayak through Krabi’s mangrove forests and enjoy the serene nature.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 220,
+          "totalRating": 1100
+        },
+        "price": 75.00,
+        "discountPercentage": 11,
+        "capacity": 20,
+        "imageUrls": [
+          "tour49_1.jpg",
+          "tour49_2.jpg",
+          "tour49_3.jpg"
+        ]
+      },
+      {
+        "id": 50,
+        "name": "Phuket James Bond Island Tour by Speedboat",
+        "productDescription": "Visit the iconic James Bond Island near Phuket by speedboat.",
+        "ratingStatistics": {
+          "totalNumberOfReviews": 200,
+          "totalRating": 1000
+        },
+        "price": 85.00,
+        "discountPercentage": 10,
+        "capacity": 20,
+        "imageUrls": [
+          "tour50_1.jpg",
+          "tour50_2.jpg",
+          "tour50_3.jpg"
+        ]
+      }
+    ]
+  }
+  

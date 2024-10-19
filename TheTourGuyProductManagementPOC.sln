@@ -8,6 +8,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheTourGuy.DTO", "TheTourGu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheTourGuy.Tests", "TheTourGuy.Tests\TheTourGuy.Tests.csproj", "{DA8595E5-BF0A-4DA6-8B31-C5671C788A98}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C2FC7292-7F02-4BB6-9AB6-4C80B7774A23}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalProvider", "ExternalProvider", "{5C0B940B-4C5F-4EBD-9DC7-82E4099E9445}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomeOtherGuyWorker", "SomeOtherGuyWorker\SomeOtherGuyWorker.csproj", "{BB420A0D-0E3D-474E-BA69-B4CECAE47DCF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +39,12 @@ Global
 		{DA8595E5-BF0A-4DA6-8B31-C5671C788A98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA8595E5-BF0A-4DA6-8B31-C5671C788A98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA8595E5-BF0A-4DA6-8B31-C5671C788A98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB420A0D-0E3D-474E-BA69-B4CECAE47DCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB420A0D-0E3D-474E-BA69-B4CECAE47DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB420A0D-0E3D-474E-BA69-B4CECAE47DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB420A0D-0E3D-474E-BA69-B4CECAE47DCF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BB420A0D-0E3D-474E-BA69-B4CECAE47DCF} = {5C0B940B-4C5F-4EBD-9DC7-82E4099E9445}
 	EndGlobalSection
 EndGlobal

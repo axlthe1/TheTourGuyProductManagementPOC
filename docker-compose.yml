@@ -1,0 +1,16 @@
+﻿services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672" # RabbitMQ default port
+      - "15672:15672" # RabbitMQ management UI
+    environment:
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_PASS: password
+  thetourguy.productsearcherapi:
+    image: product-search-api
+    build:
+      context: .
+      dockerfile: Dockerfile-productsearchapi
+    ports:
+      - "8080:8080"
