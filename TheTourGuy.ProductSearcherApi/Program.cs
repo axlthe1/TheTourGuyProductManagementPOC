@@ -1,6 +1,7 @@
 using System.Net;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using ProductSearcherApi.Repositories;
+using TheTourGuy.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,7 @@ builder.WebHost.ConfigureKestrel(options =>
 });
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSingleton<RabbitMqConfiguration>();
 
 
 

@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
+using TheTourGuy.Interfaces;
 using TheTourGuy.Models.External;
 using TheTourGuy.Models.Internal;
 
@@ -9,59 +11,56 @@ using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;
 
-public class SomeOtherGuyRepository
+public class SomeOtherGuyRepository : IExternalRepository
 {
+    List<TheTourGuyModel> InternalData { get; set; }
+    public string SupplierName { get; set; }
+    public string Destination { get; set; }
+    
     private readonly IMapper _mapper;
-    private  ConnectionFactory _factory;
-    private  IConnection _connection;
-    private  IModel _channel;
-    private EventingBasicConsumer _consumer;
+    private readonly IRabbitMqService _rabbitMqService;
+    private readonly ILogger<SomeOtherGuyRepository> _logger;
 
-    public SomeOtherGuyRepository(IMapper mapper)
+    public SomeOtherGuyRepository(IMapper mapper,IRabbitMqService rabbitMqService,ILogger<SomeOtherGuyRepository> logger)
     {
+        SupplierName = "SomeOtherGuy";
+        Destination = "Thailand";
         _mapper = mapper;
+        _rabbitMqService = rabbitMqService;
+        _logger = logger;
     }
-    public void Configure()
+    public async Task Configure()
     {
-        _factory = new ConnectionFactory() { HostName = "localhost", UserName = "user", Password = "password" };
-        _connection = _factory.CreateConnection();
-        
-            _channel = _connection.CreateModel();
+        await _rabbitMqService.ConnectExternalSearcher(this);
+    }
 
-            _channel.QueueDeclare(queue: "SomeOtherGuyRequestQueue", durable: false, exclusive: false,
-                autoDelete: false, arguments: null);
-            _channel.QueueDeclare(queue: "SomeOtherGuyReplyQueue", durable: false, exclusive: false,
-                autoDelete: false, arguments: null);
 
-            _consumer = new EventingBasicConsumer(_channel);
-            _consumer.Received += (model, ea) =>
-            {
-                var body = ea.Body.ToArray();
-                var message = Encoding.UTF8.GetString(body);
 
-                var request = JsonConvert.DeserializeObject<ProductFilter>(message);
-                var products = GetExternalProducts(request);
-                var response = JsonConvert.SerializeObject(products);
-
-                // Send the response back to the reply queue
-                var replyQueue = ea.BasicProperties.ReplyTo;
-                var responseBytes = Encoding.UTF8.GetBytes(response);
-
-                _channel.BasicPublish(exchange: "", routingKey: replyQueue, basicProperties: null, body: responseBytes);
+    public async Task<IEnumerable<TheTourGuyModel>> GetExternalProducts(ProductFilter? request)
+    {
+        if (InternalData == null)
+            await LoadProductsAsync();
             
-        }
+        var query = InternalData.Where(p => p.MaximumGuests >= request.Guests);
 
-        ;
+        if (!string.IsNullOrEmpty(request.ProductName))
+            query = query.Where(p => p.Title.Contains(request.ProductName, StringComparison.OrdinalIgnoreCase));
 
-        _channel.BasicConsume(queue: "SomeOtherGuyRequestQueue", autoAck: true, consumer: _consumer);
-    }
+        if (!string.IsNullOrEmpty(request.Destination))
+            query = query.Where(p => p.Destination.Contains(request.Destination, StringComparison.OrdinalIgnoreCase));
 
-    private IEnumerable<TheTourGuyModel> GetExternalProducts(ProductFilter? request)
-    {
-       return LoadProductsFromFile("SomeOtherGuyData.json", "SomeOtherGuyData", "Thailand");
+        if (!string.IsNullOrEmpty(request.Supplier))
+            query = query.Where(p => p.SupplierName.Equals(request.Supplier, StringComparison.OrdinalIgnoreCase));
+
+        if (request.MaxPrice.HasValue)
+            query = query.Where(p => p.DiscountPrice <= request.MaxPrice.Value);
+        
+        return query.ToList();
+        
+
     }
     
-    private List<TheTourGuyModel> LoadProductsFromFile(string filePath, string supplierName,string destination)
+    public List<TheTourGuyModel> LoadFromFileProducts(string filePath, string supplierName,string destination)
     {
         
         var json = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "JsonSource", filePath));
@@ -78,4 +77,22 @@ public class SomeOtherGuyRepository
         
         return remappedProducts;
     }
+
+    public async Task<List<TheTourGuyModel>> LoadProductsAsync()
+    {
+        try
+        {
+            InternalData = await Task.Run(() => LoadFromFileProducts("SomeOtherGuyData.json", SupplierName, Destination));
+            return InternalData;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error loading products");
+        }
+
+        return await Task.FromResult<List<TheTourGuyModel>>(null);
+    }
+
+    
 }
+

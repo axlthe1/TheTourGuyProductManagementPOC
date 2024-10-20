@@ -3,26 +3,26 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using TheTourGuy.Models;
 using TheTourGuy.Models.Internal;
 
 namespace ProductSearcherApi.Repositories;
 
 public class ProductRepository
 {
+    private readonly RabbitMqConfiguration _configuration;
     private readonly List<TheTourGuyModel> _products;
 
-    public ProductRepository()
+    public ProductRepository(RabbitMqConfiguration configuration)
     {
+        _configuration = configuration;
         _products = new List<TheTourGuyModel>();
         LoadProducts();
     }
 
     private void LoadProducts()
     {
-        // Load products from the three JSON files.
         LoadProductsFromFile("TheTourGuyData.json", "TheTourGuy","Mexico");
-        //LoadProductsFromFile("SomeOtherGuy.json", "SomeOtherGuy");
-        //LoadProductsFromFile("TheBigGuy.json", "TheBigGuy");
     }
 
     private void LoadProductsFromFile(string filePath, string supplierName,string destination)
@@ -40,7 +40,7 @@ public class ProductRepository
         }
     }
 
-    public IEnumerable<TheTourGuyModel> SearchProducts(ProductFilter filter)
+    public async Task<IEnumerable<TheTourGuyModel>> SearchProducts(ProductFilter filter)
     {
         if(filter == null)
             throw new ArgumentNullException(nameof(filter));
@@ -59,17 +59,17 @@ public class ProductRepository
         if (filter.MaxPrice.HasValue)
             query = query.Where(p => p.DiscountPrice <= filter.MaxPrice.Value);
 
-        var addedProducts  = SearchExternalProducts("SomeOtherGuy",filter);
+        var addedProducts  = await SearchExternalProducts("SomeOtherGuy",filter);
         var result =  query.ToList();
         result.AddRange(addedProducts);
-        return query;
+        return result;
     }
 
-    public IEnumerable<TheTourGuyModel> SearchExternalProducts(string supplier,ProductFilter filter)
+    public async Task<IEnumerable<TheTourGuyModel>> SearchExternalProducts(string supplier,ProductFilter filter)
     {
         // Use RabbitMQ to communicate with external suppliers
         var externalProducts = new List<TheTourGuyModel>();
-        var factory = new ConnectionFactory() { HostName = "localhost", UserName = "user", Password = "password" };
+        var factory = new ConnectionFactory() { HostName = _configuration.Host, UserName = _configuration.User, Password = _configuration.Password ,DispatchConsumersAsync = true };
 
         using (var connection = factory.CreateConnection())
         using (var channel = connection.CreateModel())
@@ -80,22 +80,26 @@ public class ProductRepository
 
             
 
-            var body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(filter));
-            channel.BasicPublish(exchange: "", routingKey: queueName, basicProperties: requestProps, body: body);
-
+            
             // Listen for the response from external supplier
-            var consumer = new EventingBasicConsumer(channel);
+            var consumer = new AsyncEventingBasicConsumer(channel);
             bool messageReceived = false;
-            consumer.Received += (model, ea) =>
+            consumer.Received += async (model, ea) =>
             {
                 var response = Encoding.UTF8.GetString(ea.Body.ToArray());
                 var products = JsonConvert.DeserializeObject<List<TheTourGuyModel>>(response);
                 externalProducts.AddRange(products);
                 messageReceived = true;
             };
+            
+            
             channel.BasicConsume(queue: requestProps.ReplyTo, autoAck: true, consumer: consumer);
+            
+            var body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(filter));
+            channel.BasicPublish(exchange: "", routingKey: queueName, basicProperties: requestProps, body: body);
+
             int timeWait = 0;
-            while (!messageReceived && timeWait < 1000)
+            while (!messageReceived && timeWait < _configuration.TimeoutMilliseconds)
             {
                 Task.Delay(300).Wait();
                 timeWait += 300;

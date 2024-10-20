@@ -1,5 +1,9 @@
 ﻿services:
   rabbitmq:
+    container_name: rabbitmq
+    hostname: rabbitmq
+    networks:
+      - myapp_net
     image: rabbitmq:3-management
     ports:
       - "5672:5672" # RabbitMQ default port
@@ -8,9 +12,32 @@
       RABBITMQ_DEFAULT_USER: user
       RABBITMQ_DEFAULT_PASS: password
   thetourguy.productsearcherapi:
+    hostname: tourguy
+    depends_on:
+      - rabbitmq
+    networks:
+      - myapp_net
     image: product-search-api
     build:
       context: .
-      dockerfile: Dockerfile-productsearchapi
+      dockerfile: .\TheTourGuy.ProductSearcherApi\Dockerfile
     ports:
       - "8080:8080"
+  thetourguy.SomeOtherGuyWorker:
+    hostname: otherguy
+    depends_on:
+      rabbitmq:
+        condition: service_started
+    restart: on-failure
+    networks:
+      - myapp_net
+    image: worker-otherguy
+    build:
+      context: .
+      dockerfile: .\SomeOtherGuyWorker\Dockerfile
+  
+networks:
+  myapp_net:
+    name: myapp_net
+    
+    

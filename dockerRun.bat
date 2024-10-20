@@ -1,1 +1,0 @@
-podman run -d -p 8080:8080 --name product-search-api product-search-api
