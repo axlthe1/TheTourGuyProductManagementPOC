@@ -4,6 +4,7 @@ using Newtonsoft.Json.Linq;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using TheTourGuy.Models;
+using TheTourGuy.Models.Extensions;
 using TheTourGuy.Models.Internal;
 
 namespace ProductSearcherApi.Repositories;
@@ -45,22 +46,13 @@ public class ProductRepository
         if(filter == null)
             throw new ArgumentNullException(nameof(filter));
         
-        var query = _products.Where(p => p.MaximumGuests >= filter.Guests);
+        var query = _products.TheTourGuyFilter(filter);
 
-        if (!string.IsNullOrEmpty(filter.ProductName))
-            query = query.Where(p => p.Title.Contains(filter.ProductName, StringComparison.OrdinalIgnoreCase));
-
-        if (!string.IsNullOrEmpty(filter.Destination))
-            query = query.Where(p => p.Destination.Contains(filter.Destination, StringComparison.OrdinalIgnoreCase));
-
-        if (!string.IsNullOrEmpty(filter.Supplier))
-            query = query.Where(p => p.SupplierName.Equals(filter.Supplier, StringComparison.OrdinalIgnoreCase));
-
-        if (filter.MaxPrice.HasValue)
-            query = query.Where(p => p.DiscountPrice <= filter.MaxPrice.Value);
-
-        var addedProducts  = await SearchExternalProducts("SomeOtherGuy",filter);
+       
         var result =  query.ToList();
+        var addedProducts  = await SearchExternalProducts("SomeOtherGuy",filter);
+        result.AddRange(addedProducts);
+        addedProducts  = await SearchExternalProducts("TheBigGuy",filter);
         result.AddRange(addedProducts);
         return result;
     }
@@ -76,8 +68,12 @@ public class ProductRepository
         {
             string queueName = supplier + "RequestQueue";  // Use a dedicated queue for each supplier
             var requestProps = channel.CreateBasicProperties();
-            requestProps.ReplyTo = supplier + "ReplyQueue";  // Reply queue to listen for response
-
+            requestProps.ReplyTo = supplier + "ReplyQueue_" + Guid.NewGuid().ToString();  // Reply queue to listen for response
+            requestProps.Expiration = _configuration.TimeoutMilliseconds.ToString();
+            requestProps.ContentType = "application/json";
+            requestProps.DeliveryMode = 2;
+            channel.QueueDeclare(queue: requestProps.ReplyTo, durable: false, exclusive: false,
+                autoDelete: false, arguments: null);
             
 
             
@@ -104,10 +100,9 @@ public class ProductRepository
                 Task.Delay(300).Wait();
                 timeWait += 300;
             }
-            // Wait for a few seconds for the response to come back
-            
+            channel.QueueDelete(requestProps.ReplyTo);
         }
-
+        
         return externalProducts;
     }
 }

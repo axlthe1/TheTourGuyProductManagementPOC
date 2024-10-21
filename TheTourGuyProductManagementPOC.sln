@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheTourGuy.Interfaces", "Th
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheTourGuy.BasicWorker", "TheTourGuy.BasicWorker\TheTourGuy.BasicWorker.csproj", "{5B96B945-F502-4516-A3CD-864F02B33F4B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheBigGuyWorker", "TheBigGuyWorker\TheBigGuyWorker.csproj", "{055B56CA-7516-4618-90CB-800C84803C4B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,8 +57,13 @@ Global
 		{5B96B945-F502-4516-A3CD-864F02B33F4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B96B945-F502-4516-A3CD-864F02B33F4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B96B945-F502-4516-A3CD-864F02B33F4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{055B56CA-7516-4618-90CB-800C84803C4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{055B56CA-7516-4618-90CB-800C84803C4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{055B56CA-7516-4618-90CB-800C84803C4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{055B56CA-7516-4618-90CB-800C84803C4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BB420A0D-0E3D-474E-BA69-B4CECAE47DCF} = {5C0B940B-4C5F-4EBD-9DC7-82E4099E9445}
+		{055B56CA-7516-4618-90CB-800C84803C4B} = {5C0B940B-4C5F-4EBD-9DC7-82E4099E9445}
 	EndGlobalSection
 EndGlobal

@@ -1,6 +1,6 @@
 @ProductSearcherApi_HostAddress = http://localhost:8080
 
-GET {{ProductSearcherApi_HostAddress}}/api/products?guests=5
+GET {{ProductSearcherApi_HostAddress}}/api/products?guests=26
 Accept: application/json
 
 ###

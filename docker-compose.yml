@@ -12,6 +12,7 @@
       RABBITMQ_DEFAULT_USER: user
       RABBITMQ_DEFAULT_PASS: password
   thetourguy.productsearcherapi:
+    container_name: product-search-api
     hostname: tourguy
     depends_on:
       - rabbitmq
@@ -24,6 +25,7 @@
     ports:
       - "8080:8080"
   thetourguy.SomeOtherGuyWorker:
+    container_name: worker-otherguy
     hostname: otherguy
     depends_on:
       rabbitmq:
@@ -35,6 +37,19 @@
     build:
       context: .
       dockerfile: .\SomeOtherGuyWorker\Dockerfile
+  thetourguy.TheBigGuyWorker:
+    hostname: bigguy
+    container_name: worker-bigguy
+    depends_on:
+      rabbitmq:
+        condition: service_started
+    restart: on-failure
+    networks:
+      - myapp_net
+    image: worker-bigguy
+    build:
+      context: .
+      dockerfile: .\TheBigGuyWorker\Dockerfile
   
 networks:
   myapp_net:
