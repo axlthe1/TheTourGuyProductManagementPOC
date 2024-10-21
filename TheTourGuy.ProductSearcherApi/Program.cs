@@ -12,6 +12,8 @@ builder.Services.AddAutoMapper(typeof(Program));
 //Adds controller
 builder.Services.AddControllers();
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
+builder.Services.AddSingleton<RabbitMqConfiguration>();
+builder.Services.AddSingleton<RestAPIConfiguration>();
 builder.Services.AddSingleton<IRabbitMqExchangeService, RabbitMqExchangeService>();
 //Adds swagger and doc only in debug
 builder.WebHost.ConfigureKestrel(options =>
