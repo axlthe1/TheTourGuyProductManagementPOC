@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ProductSearcherApi.Repositories;
 using TheTourGuy.DTO.Request;
+using TheTourGuy.Interfaces;
 using TheTourGuy.Models;
 using TheTourGuy.Models.Internal;
 
@@ -12,12 +13,12 @@ namespace ProductSearcherApi.Controllers;
 public class ProductsController : ControllerBase
 {
     private readonly IMapper _mapper;
-    private readonly ProductRepository _repository;
+    private readonly IProductRepository _repository;
 
-    public ProductsController(IMapper mapper, ProductRepository repository)
+    public ProductsController(IMapper mapper, IProductRepository repository)
     {
         _mapper = mapper;
-        _repository = new ProductRepository(new RabbitMqConfiguration());
+        _repository = repository;
     }
 
     [HttpGet]

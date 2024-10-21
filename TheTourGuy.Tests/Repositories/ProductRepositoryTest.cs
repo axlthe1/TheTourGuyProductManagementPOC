@@ -1,4 +1,6 @@
-﻿using ProductSearcherApi.Repositories;
+﻿using Microsoft.Extensions.Logging;
+using ProductSearcherApi.Repositories;
+using ProductSearcherApi.Services;
 using TheTourGuy.Models;
 using TheTourGuy.Models.Internal;
 
@@ -13,7 +15,12 @@ public class ProductRepositoryTest
     [SetUp]
     public void Setup()
     {
-        _productRepository= new ProductRepository(new RabbitMqConfiguration());
+        var rest = new RestAPIConfiguration();
+        var rmq = new RabbitMqConfiguration();
+        ILoggerFactory factory = LoggerFactory.Create(builder => builder.AddConsole());
+        ILogger<RabbitMqExchangeService> logger = factory.CreateLogger<RabbitMqExchangeService>();
+        ILogger<ProductRepository> logger2 = factory.CreateLogger<ProductRepository>();
+        _productRepository= new ProductRepository(rest, rmq,new RabbitMqExchangeService(rmq,logger),logger2);
     }
     
     [Test]

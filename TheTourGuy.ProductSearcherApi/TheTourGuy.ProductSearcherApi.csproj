@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TheTourGuy.DTO\TheTourGuy.DTO.csproj" />
+    <ProjectReference Include="..\TheTourGuy.Interfaces\TheTourGuy.Interfaces.csproj" />
     <ProjectReference Include="..\TheTourGuy.Models\TheTourGuy.Models.csproj" />
   </ItemGroup>
 

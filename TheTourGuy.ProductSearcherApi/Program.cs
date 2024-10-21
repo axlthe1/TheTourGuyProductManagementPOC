@@ -1,6 +1,8 @@
 using System.Net;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using ProductSearcherApi.Repositories;
+using ProductSearcherApi.Services;
+using TheTourGuy.Interfaces;
 using TheTourGuy.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(typeof(Program));
 //Adds controller
 builder.Services.AddControllers();
-builder.Services.AddTransient<ProductRepository>();
+builder.Services.AddTransient<IProductRepository, ProductRepository>();
+builder.Services.AddSingleton<IRabbitMqExchangeService, RabbitMqExchangeService>();
 //Adds swagger and doc only in debug
 builder.WebHost.ConfigureKestrel(options =>
 {
